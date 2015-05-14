@@ -29,22 +29,23 @@ for (var i = 0; i < target; i++){
 
 function playerArr(num){
 
-	var players = [];
+	var player = [];
 
 	for (var i = 0; i<num; i++){
-		players.push(i+1);
+		player.push(i+1);
 	}
-	return players;
+	return player;
 }
 
 // playerNum(10);
 
 function game(num, playerNum){
 
-	var players = playerArr(playerNum); //--> returns array 1 through playerNum
+	var player = playerArr(playerNum); //--> returns an array of [1, ..., playerNum]
+	var count = num
 
-	for (var i=0; i<players.length; i++){
-
+	for (var i=1; i<=count; i++){
+		console.log("player " + player[(i-1)%player.length] + " says " + i + " " + count)
 	}
-
+	console.log(player);
 }
