@@ -4,28 +4,13 @@ PSEUDO-CODE:
 
 Have an array with numbers 1-10 (represent players);
 
-[|1|, 2, 3, 4, ...] --> use pipe chars to show where the count is.
-
 to start, players[0] will be count = 1
 
-increment = 1
+increment up to 7, then decrement until we get to count = 14 --> (if count% 7, switch directions)
 
-for (var i = 0; i < target; i++){
-	if(count%7 === 0){
-		increment = - increment;
-	}else if(count%11 === 0){
-		increment = (increment * 2);
-	}else {
-		
-	}
-}
 
 
 */
-
-
-
-
 
 function playerArr(num){
 
@@ -39,13 +24,29 @@ function playerArr(num){
 
 // playerNum(10);
 
-function game(num, playerNum){
+function game(target, playerNum){
 
 	var player = playerArr(playerNum); //--> returns an array of [1, ..., playerNum]
-	var count = num
+	var direction = 1;
+	var skip = null;
+	var index = 0;
 
-	for (var i=1; i<=count; i++){
-		console.log("player " + player[(i-1)%player.length] + " says " + i + " " + count)
+	for (var i=1; i<=target; i ++){
+		// if((i%7 === 0)&&(i%11 === 0)){
+		// 	direction = (-1 * direction);
+		// 	skip = 2 * direction;
+		// 	console.log(i);
+		// 	console.log("skip = " +skip+ ", direction = "+direction);
+		// }else if(i%11 === 0){
+		// 	skip = (2 * direction)
+		// 	console.log(i);
+		// 	console.log("skip = " +skip+ ", direction = "+direction);
+		if(i%7 === 0 ){
+			direction = (-1 * direction);
+			console.log(i);
+			console.log("direction = " + direction);
+		}
+		console.log("player " + player[(index)%player.length] + " says " + i + " | target = " + target + " | index = "+index+" | increment = "+direction);
+		index += direction;
 	}
-	console.log(player);
 }
