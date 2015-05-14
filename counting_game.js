@@ -22,51 +22,46 @@ function playerArr(num){
 	return player;
 }
 
+
 // playerNum(10);
 
 function game(target, playerNum){
 
 	var player = playerArr(playerNum); //--> returns an array of [1, ..., playerNum]
 	var direction = 1;
-	var skip = null;
 	var index = 0;
 
 	for (var i=1; i<=target; i ++){
 
 		if((i%7 === 0)&&(i%11 === 0)&&(i!==0)){
 			direction = (-1 * direction);
-			skip = 2 * direction;
-			console.log(i);
-			console.log("skip = " +skip+ ", direction = "+direction);
-		}else if((i%11 === 0)&&(i!==0)){
-			skip = (2 * direction)
-			console.log(i);
-			console.log("skip = " +skip+ ", direction = "+direction);
+			// console.log(i);
+			// console.log("skip = " +skip+ ", direction = "+direction);
 		}else if((i%7 === 0 )&&(i!==0)){
 			direction = (-1 * direction);
 			// console.log(i);
-			console.log("direction = " + direction);
+			// console.log("direction = " + direction);
 		}
-
-		console.log(index + " 1");
 
 		if(index < 0){
 			index = 9;
 		}else if (index > 9){
 			index = 0;
 		}else if(((i-1)%11===0)&&((i-1)>0)){
-			console.log(index + " before")
-			console.log(i + " = i")
 			index += direction;
-			console.log(index + " after")
-			console.log(i + " = i")
 		}
-		console.log(index +" 2" );
-		console.log("player " + player[(index)%player.length] + " says " + i + " | target = " + target + " | index = "+index+" | increment = "+direction);
+
+		console.log("player %d says %d | index = %s", player[(index)%player.length], i, index);
+
+		if(i === target){
+			continue;
+		}
+
 		index += direction;
 	}
 }
 
+game(100,10);
 
 
 
