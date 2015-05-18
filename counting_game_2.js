@@ -9,12 +9,12 @@ function playerArr(num) {
 }
 
 //--> ROB HELPED CONDENSE THESE TWO FUNCTIONS
-function divSeven(num){
-	return num % 7 === 0; //--> RETURNS BOOLEAN
+function divTwentyOne(num){
+	return num % 21 === 0; //--> RETURNS BOOLEAN
 }
 
-function divEleven(num){
-	return num % 11 === 0; //--> RETURNS BOOLEAN
+function divFourteen(num){
+	return num % 14 === 0; //--> RETURNS BOOLEAN
 }
 
 function game(target, players){
@@ -31,18 +31,18 @@ function game(target, players){
 			
 			count += 1;
 
-			if ((divSeven(count - 1)) && (i !== 0)) {
+			if ((divTwentyOne(count - 1)) && (i !== 0)) {
 				direction = direction * (-1);
 			}
 
-			if ((divEleven(count - 1)) && (i !== 0)) {
+			if ((divFourteen(count - 1)) && (i !== 0)) {
 				direction = (direction * 2);
 			}
 
 			index += direction;
 			console.log("index: %s | direction: %d | count: %d", index, direction, count);
 
-			if ((divEleven(count - 1)) && (i !== 0)) {
+			if ((divFourteen(count - 1)) && (i !== 0)) {
 				direction = direction/2;
 			} // --> Set the direction back to either +/- 1 AFTER incrementing the index
 
