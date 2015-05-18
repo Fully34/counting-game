@@ -16,3 +16,12 @@ However, there are two conditions that alter the game in a big way.
 2. If the number being stated is divisible by 11, the next player is skipped
 
 The goal of the game is to tell the user which player says the final number when the dust settles.  
+
+
+
+NOTES:
+
+counting_game.js does not do it properly.  However, I did flesh out the logic while writing that particular file.  It was just too messed up to keep tinkering with, so I started from scratch with counting_game_2.js
+
+
+counting_game_2.js solves correctly (I am pretty sure, please tell me if there is an issue!).  I had a little help from a developer friend of mine with condensing some of the more verbose logic/procedures I had originally implemented.
