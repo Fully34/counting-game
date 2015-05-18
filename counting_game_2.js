@@ -8,21 +8,13 @@ function playerArr(num) {
 	return player;
 }
 
-
+//--> ROB HELPED CONDENSE THESE TWO FUNCTIONS
 function divSeven(num){
-	if (num % 7 === 0){
-		return true;
-	}else{
-		return false;
-	}
+	return num % 7 === 0; //--> RETURNS BOOLEAN
 }
 
 function divEleven(num){
-	if (num % 11 === 0){
-		return true;
-	}else{
-		return false;
-	}
+	return num % 11 === 0; //--> RETURNS BOOLEAN
 }
 
 function game(target, players){
@@ -58,21 +50,13 @@ function game(target, players){
 			// DEALING WITH SITUATION WHERE INDEX IS EITHER LESS THAN ZERO OR GREATER THAN THE ARRAY LENGTH//
 			//===========================================// 
 			if(i > 0){ // --> Had to do this to prevent modification of the index var on the very first iteration//
+				//--> ROB HELPED WITH CONDENSING THIS AREA
 				if (index < 0) {
-					if (index === -1) {
-						index = (array.length - 1);
-					}else if (index === -2){
-						index = (array.length - 2)
-					}
+					index = (array.length + index);
 				}else if (index > (array.length - 1)) {
-		            if (index === array.length) {
-		            	index = 0;
-		            }else if(index === (array.length + 1)){
-		            	index = 1; 
-		            }
-				}
+		        	index = (index % (array.length));
+		        }
 			}
-
 			console.log("----Player # %s says %d, %s", array[index], count, direction + "----"); // --> USE THIS TO VISUALIZE PROCESS
 		}
 	}
