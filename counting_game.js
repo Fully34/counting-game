@@ -23,72 +23,71 @@ function playerArr(num) {
 }
 
 
-// playerNum(10);
+function divSeven(num){
+	if (num % 7 === 0){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function divEleven(num){
+	if (num % 11 === 0){
+		return true;
+	}else{
+		return false;
+	}
+}
 
 function game(target, playerNum) {
 
 	var player = playerArr(playerNum); //--> returns an array of [1, ..., playerNum]
 	var direction = 1;
-	var index = 0;
+	var index = -1;
 
 	for (var i = 1; i <= target; i++) {
 
-		if ((i % 7 === 0) && (i !== 0)) {
-			direction = (-1 * direction);
-			// console.log(i);
-			// console.log("skip = " +skip+ ", direction = "+direction);
+		if (divSeven(i)){
+			direction = (direction * -1);
+			console.log("direction = " + direction);
 		}
 
-		if (index < 0) {
-			console.log("index less than zero" + index);
-			if (index === -1){
-				console.log(index);
-				index = (player.length - 1);
-				console.log("index flip");
-				console.log(index);
-			} else if (index === -2){
-				console.log(index);
-				index = (player.length - 2);
-				console.log("mega flip");
-				console.log(index);
-			}
-		} else if (index > (player.length)) {
-			console.log("index greater than length" + index);
-			if (index === (player.length)) {
-				console.log(index);
-				index = 0;
-				console.log("index flip");
-				console.log(index);
-			}else if (index === (player.length + 1)) {
-				console.log(index);
-				index = 1;
-				console.log("mega flip");
-				console.log(index);
-			}
-		} 
-
-		if (((i - 1) % 11 === 0) && ( (i - 1) > 0)) {
-			index += direction;
-			console.log("skip");
-			if (index === -1){
-				console.log("index flip");
-				index = (player.length - 1);
-			} else if (index === -2){
-				console.log("mega flip");
-				index = (player.length - 2);
+		if (i > 1) {
+			if (index < 0) {
+				if (index === -1){
+					// console.log("index = player.length  --> " + index);
+					index = (player.length - 1);
+				} else if (index === -2){
+					// console.log("index = player.length  --> " + index);
+					index = (player.length - 2);
+				}
+			} else if (index >= (player.length)) {
+				if (index === (player.length)) {
+					// console.log("index = player.length  --> " + index);
+					index = 0;
+					console.log("index flip");
+				}else if (index === (player.length + 1)) {
+					// console.log("index = player.length + 1 --> " + index);
+					index = 1;
+					console.log("mega flip");
+				}
 			}
 		}
-
-		console.log("player %d says %d | index = %s", player[(index)%player.length], i, index);
-
 		index += direction;
-		if (i % 7 === 0){
-			console.log("switch" + " | " + direction);
+
+		if (divEleven(i)) {
+			index += direction;
+			console.log("skip" + " | " + direction);
 		}
+
+	console.log(player[index] + " | " + direction);
+
 	}
+
+	return "player " + index + " says " + target;
 }
 
-game(147,3);
+game(100,10);
 
 
 
