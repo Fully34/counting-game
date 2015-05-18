@@ -80,7 +80,7 @@ function game(target, playerNum) {
 			console.log("skip" + " | " + direction);
 		}
 
-	console.log(player[index] + " | " + direction);
+	console.log("player " + player[index] + " says " + i);
 
 	}
 
