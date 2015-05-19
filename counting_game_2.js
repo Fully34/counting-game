@@ -55,8 +55,8 @@ function game(target, players){
 				if (index < 0) {
 					index = (array.length + index);
 				}else if (index > (array.length - 1)) {
-		        	index = (index % (array.length));
-		        }
+					index = (index % (array.length));
+				}
 			}
 			console.log("----Player # %s says %d, %s", array[index], count, direction + "----"); // --> USE THIS TO VISUALIZE PROCESS
 		}
