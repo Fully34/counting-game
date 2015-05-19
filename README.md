@@ -26,4 +26,4 @@ counting_game.js does not do it properly.  However, I did flesh out the logic wh
 
 counting_game_2.js solves correctly (I am pretty sure, please tell me if there is an issue!).  I had a little help from a developer friend of mine with condensing some of the more verbose logic/procedures I had originally implemented.
 
-MODIFIED THE RULES FOR THE DIRECTION SWAP (21) AND THE SKIP (14) b/c the program was boring and wouldn't go deeply into a large group of players, it would just oscillate like 5 or six numbers in on either side.  
+MODIFIED THE RULES FOR THE DIRECTION SWAP (21) AND THE SKIP (14) b/c the program was boring and wouldn't go deeply into a large group of players, it would just oscillate like five or six numbers in on either side.  
