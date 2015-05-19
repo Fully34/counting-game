@@ -48,6 +48,7 @@ function game(target, players){
 
 
 			// DEALING WITH SITUATION WHERE INDEX IS EITHER LESS THAN ZERO OR GREATER THAN THE ARRAY LENGTH//
+			// Essentially wrapping the array position//
 			//===========================================// 
 			if(i > 0){ // --> Had to do this to prevent modification of the index var on the very first iteration//
 				//--> ROB HELPED WITH CONDENSING THIS AREA
@@ -63,4 +64,4 @@ function game(target, players){
 	return "Player # " + array[index] + " says " + target; //--> Returns 'player' who says 'target'
 }
 
-game(150, 7);
+game(499, 29);
