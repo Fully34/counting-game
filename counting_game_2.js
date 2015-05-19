@@ -40,7 +40,7 @@ function game(target, players){
 			}
 
 			index += direction;
-			console.log("index: %s | direction: %d | count: %d", index, direction, count);
+			console.log("index: %s | direction: %d | count: %d", index, direction, count); // --> HELPS VISUALIZE PROCESS
 
 			if ((divFourteen(count - 1)) && (i !== 0)) {
 				direction = direction/2;
@@ -58,7 +58,7 @@ function game(target, players){
 					index = (index % (array.length));
 				}
 			}
-			console.log("----Player # %s says %d, %s", array[index], count, direction + "----"); // --> USE THIS TO VISUALIZE PROCESS
+			console.log("----Player # %s says %d, %s", array[index], count, direction + "----"); // --> HELPS VISUALIZE PROCESS
 		}
 	}
 	return "Player # " + array[index] + " says " + target; //--> Returns 'player' who says 'target'
